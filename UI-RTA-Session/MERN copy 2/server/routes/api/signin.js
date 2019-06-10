@@ -10,7 +10,7 @@ module.exports = app => {
     const { body } = req;
     const { password, firstName, lastName } = body;
     let { email } = body;
-    
+
     if (!firstName) {
       return res.send({
         success: false,
@@ -44,7 +44,7 @@ module.exports = app => {
         1.Verify email doesnt exist 
         2. save info
         */
-       console.log("Dans le server OUT!");
+    console.log("Dans le server OUT!");
     User.find(
       {
         email: email
@@ -109,8 +109,6 @@ module.exports = app => {
     );
   });
 
-
-
   app.post("/api/account/signin", (req, res, next) => {
     const { body } = req;
     const { password } = body;
@@ -131,22 +129,21 @@ module.exports = app => {
     email = email.toLowerCase();
 
     //find user and check password and verify
-    console.log("SON EMAIL ",email)
-    console.log("SON PASSWORD ",password)
+    console.log("SON EMAIL ", email);
+    console.log("SON PASSWORD ", password);
     User.find(
       {
         email: email
       },
       (err, users) => {
-        
         if (err) {
-          console.log("ERREUR ICI ",err)
+          console.log("ERREUR ICI ", err);
           return res.send({
             sucess: false,
             message: "Error: server error"
           });
         }
-        console.log("LES USERS ",users)
+        console.log("LES USERS ", users);
         if (users.length != 1) {
           return res.send({
             sucess: false,
@@ -154,7 +151,7 @@ module.exports = app => {
           });
         }
         const user = users[0];
-        
+
         if (!user.validPassword(password)) {
           return res.send({
             sucess: false,
@@ -163,7 +160,7 @@ module.exports = app => {
         }
 
         //otherwise, create user session
-        console.log("ON ARRIVE ICI ")
+        console.log("ON ARRIVE ICI ");
         const userSession = new UserSession();
         userSession.userId = user._id;
         userSession.save((err, doc) => {
