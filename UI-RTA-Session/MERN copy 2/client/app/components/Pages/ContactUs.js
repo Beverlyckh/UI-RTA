@@ -27,6 +27,9 @@ class ContactUs extends Component{
                                     <nav class="main_nav ml-auto">
                                         <ul class="main_nav_list">
                                         <li class="main_nav_item"><a href="/starttrip">Home</a></li>
+										<li className="main_nav_item">
+                        <a href="profile">Dashboard</a>
+                      </li>
 								            <li class="main_nav_item"><a href="accomodations">Accomodations</a></li>
                                             <li class="main_nav_item active"><a href="contactus">Contact</a></li>
 											<li className="main_nav_item"><a href="aboutus">About us</a></li>
