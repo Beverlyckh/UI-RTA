@@ -34,7 +34,8 @@ class Route extends Component {
       // height: 480,
       marginLeft: 0,
       marginTop: 0,
-      position: "relative"
+      position: "relative",
+      
     };
 
     //add locations to the waypoints array before printing it out
@@ -43,7 +44,7 @@ class Route extends Component {
         <Waypoint
           key={0}
           waypoint={"Start Destination: " + from}
-          color="#ffc107"
+          color="#fe3c52"
           showButton={false}
         />
         <br />
@@ -55,7 +56,7 @@ class Route extends Component {
           <Waypoint
             key={i + 1}
             waypoint={waypoints[i].waypointName}
-            color="#ffc107"
+            color="#fe3c52"
             showButton={true}
             handleClick={this.props.handleClick}
           />
@@ -69,7 +70,7 @@ class Route extends Component {
         <Waypoint
           key={waypoints.length + 1}
           waypoint={"End Destination: " + to}
-          color="#ffc107"
+          color="#fe3c52"
           showButton={false}
         />
         <br />

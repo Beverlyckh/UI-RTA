@@ -188,8 +188,59 @@ class MealPreferences extends React.Component {
     };
 
     return (
-      <div className="row p-4">
-        <div className="col-md-4">
+      <div
+        className="row p-4"
+        style={{ backgroundImage: "url(images/home.jpg)" }}
+      >
+        {/* <!-- Header --> */}
+
+        <header class="header">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="header_container d-flex flex-row align-items-center justify-content-start">
+                  {/* <!-- Logo --> */}
+                  <div class="logo_container">
+                    <div class="logo">
+                      <div>Excursion</div>
+                      <div>Road Trip Planner</div>
+                      <div class="logo_image">
+                        <img src="images/logo.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* <!-- Main Navigation --> */}
+                  <nav class="main_nav ml-auto">
+                    <ul class="main_nav_list">
+                      <li class="main_nav_item">
+                        <a href="/starttrip">Home</a>
+                      </li>
+                      <li class="main_nav_item">
+                        <a href="accomodations">Accomodations</a>
+                      </li>
+                      <li class="main_nav_item ">
+                        <a href="contactus">Contact</a>
+                      </li>
+                      <li className="main_nav_item active">
+                        <a href="#">About us</a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  {/* <!-- Hamburger --> */}
+                  <div class="hamburger ml-auto">
+                    <i class="fa fa-bars" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div
+          className="col-md-4 "
+          style={{ paddingTop: "150px", alignItems: "center" }}
+        >
           <div className="row">
             <MealCard
               // style={mealCard}
@@ -217,6 +268,7 @@ class MealPreferences extends React.Component {
               <button
                 type="button"
                 class="btn btn-warning"
+                style={{ backgroundColor: "#fe3c52", color: "white" }}
                 disabled={false}
                 onClick={this.onEnterTrip}
               >
@@ -224,69 +276,19 @@ class MealPreferences extends React.Component {
               </button>
             </div>
           </div>
-        </div>
-        <div className="col-md-8 p-1">
-          <MealMap
-            search={this.state.selected}
-            price={this.state.price_range}
-            reviews={this.state.ratings}
-            radius={this.state.distance}
-            locations={this.props.location.state}
-            handleClick={this.onMouseClickAdd}
-            route={this.state.route}
-          />
+          <div className="col-md-8 p-1">
+            <MealMap
+              search={this.state.selected}
+              price={this.state.price_range}
+              reviews={this.state.ratings}
+              radius={this.state.distance}
+              locations={this.props.location.state}
+              handleClick={this.onMouseClickAdd}
+              route={this.state.route}
+            />
+          </div>
         </div>
       </div>
-
-      //       // container Meal pref div
-      //       <div className="">
-      //         {/* <Header /> */}
-      //         <p />
-      //         {/* <WeekContainer origin={this.props.location.state.from}/> */}
-      //         <div style={{width:"500px", marginLeft:"10px"}}>
-      //         <MealCard
-      //           // style={mealCard}
-      //           color="#ffc107"
-      //           getKeywordList={this.selectedKeywords}
-      //           getPrice={this.selectPrice}
-      //           getRadius={this.selectedDistance}
-      //           getRatings={this.selectedRatings}
-      //           locations={this.props.location.state}
-      //         />
-      //          <Route
-      //           waypoints={this.state.route}
-      //           from={this.props.location.state.from}
-      //           to={this.props.location.state.to}
-      //           handleClick={this.removeWaypoint}
-      //         />
-      // </div>
-      // {/* <div>
-      //          <MealMap
-      //           search={this.state.selected}
-      //           price={this.state.price_range}
-      //           reviews={this.state.ratings}
-      //           radius={this.state.distance}
-      //           locations={this.props.location.state}
-      //           handleClick={this.onMouseClickAdd}
-      //         />
-      //   </div>
-      //         <Route
-      //           waypoints={this.state.route}
-      //           from={this.props.location.state.from}
-      //           to={this.props.location.state.to}
-      //           handleClick={this.removeWaypoint}
-      //         />
-      // <button
-      //   type="button"
-      //   style={buttonStyle}
-      //   class="btn btn-warning pl-5 pr-5"
-      //   disabled={!this.addToDB}
-      //   onClick={this.onEnterTrip}
-      // >
-      //   Save Trip Changes
-      // </button> */}
-
-      //       </div>
     );
   }
 }

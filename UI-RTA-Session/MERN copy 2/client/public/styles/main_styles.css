@@ -1671,3 +1671,7 @@ section
 	background-size: cover;
 	background-position: center center;
 }
+
+.mealTagColor{
+	color: white;
+}
