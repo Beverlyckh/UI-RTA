@@ -44,9 +44,9 @@ const MyMapComponent = compose(
           //WebkitFilter: "drop-shadow(0px 0px 30px )",
           // marginLeft: 500,
           // marginTop: -510
-          right:0,
-          width:"100%",
-          height:"100%"
+          right: 0,
+          width: "100%",
+          height: "100%"
         }}
       />
     )
@@ -57,11 +57,14 @@ const MyMapComponent = compose(
     componentWillMount() {
       this.getGeoLocation();
     },
+    componentWillUpdate() {
+      this.getGeoLocation();
+    },
     async getGeoLocation() {
       //this method gets the geolocation coordinates by calling getLocationCoordinates while passing location names as input from user
       if (this.props.locations) {
         const locations = this.props.locations; //passing array with start and end destination names
-        route_markers = []; //used to store the geolocation
+        var route_markers = []; //used to store the geolocation
         const from = await this.getLocationCoordinates(locations.from); //returns coordinate of start dest
         const to = await this.getLocationCoordinates(locations.to); //returns coordinates of end dest
         route_markers.push(from); //add to the array
@@ -77,13 +80,13 @@ const MyMapComponent = compose(
         const geocoder = new window.google.maps.Geocoder();
         geocoder.geocode({ address: location }, (result, status) => {
           if (status == "OK") {
-           // console.log(result)
+            // console.log(result)
             const geometry = result[0].geometry.location;
             const coordinates = {
               lat: geometry.lat(),
               lng: geometry.lng()
             };
-            console.log(coordinates)
+            console.log(coordinates);
             resolve(coordinates);
           } else {
             reject("ERROR");
@@ -93,6 +96,15 @@ const MyMapComponent = compose(
     },
     componentDidMount(route_markers) {
       //this method draws the route between start and end destination
+      var waypointsforroute = [];
+      if (this.props.route) {
+        this.props.route.map(waypoint => {
+          waypointsforroute.push({
+            location: new google.maps.LatLng(waypoint.lat, waypoint.lng)
+          });
+        });
+      }
+
       if (route_markers) {
         const DirectionsService = new google.maps.DirectionsService();
         DirectionsService.route(
@@ -105,6 +117,8 @@ const MyMapComponent = compose(
               route_markers[1].lat,
               route_markers[1].lng
             ),
+            waypoints: waypointsforroute,
+            optimizeWaypoints: true,
             travelMode: google.maps.TravelMode.DRIVING
           },
           (result, status) => {
@@ -209,10 +223,10 @@ const MyMapComponent = compose(
               }
             })
               .then(response => {
-               // console.log(response);
+                // console.log(response);
               })
               .catch(e => {
-               // console.log(e);
+                // console.log(e);
               });
           });
         } //end of forloop
@@ -234,12 +248,12 @@ const MyMapComponent = compose(
   if (props.places != null)
     // if(route_markers[1]!== undefined)
     var target = new google.maps.LatLng(center_lat, center_lng); //this needs to update with the bound and not be fixed like this
- // console.log("TARGET:" + target);
+  // console.log("TARGET:" + target);
   if (props.defaultCenter !== undefined) {
     target = props.defaultCenter;
   }
 
- // console.log(center);
+  // console.log(center);
   var option = []; //new array to store results based on search criteria
   if (props.places) {
     //traverse through the place array, if there is a match between radius , price level. Enables makers to show without other information
@@ -343,7 +357,6 @@ const MyMapComponent = compose(
                   {place.name + " "}
                   <button
                     onClick={() =>
-                      
                       props.handleClick(
                         place.geometry.location.lat(),
                         place.geometry.location.lng(),
@@ -394,6 +407,7 @@ export default class MealMap extends React.Component {
           radius={radius * 1609} //converting into meters
           locations={locations}
           handleClick={this.props.handleClick}
+          route={this.props.route}
         />
       );
     }

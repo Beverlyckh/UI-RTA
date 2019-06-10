@@ -81,80 +81,101 @@ class Header extends Component {
 
   render() {
     return (
-     <div>
-      {/* <!-- Header --> */}
+      <div>
+        {/* <!-- Header --> */}
 
-	<header className="header">
-  <div className="container">
-    <div className="row">
-      <div className="col">
-        <div className="header_container d-flex flex-row align-items-center justify-content-start">
+        <header className="header">
+          <div className="container">
+            <div className="row">
+              <div className="col">
+                <div className="header_container d-flex flex-row align-items-center justify-content-start">
+                  {/* <!-- Logo --> */}
+                  <div className="logo_container">
+                    <div className="logo">
+                      <div>Excursion</div>
+                      <div>Road Trip Planner</div>
+                      <div className="logo_image">
+                        <img src="./images/logo.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
 
-          {/* <!-- Logo --> */}
-          <div className="logo_container">
-            <div className="logo">
-              <div>Excursion</div>
-              <div>Road  Trip Planner</div>
-              <div className="logo_image"><img src="./images/logo.png" alt=""/></div>
+                  {/* <!-- Main Navigation --> */}
+                  <nav className="main_nav ml-auto">
+                    <ul className="main_nav_list">
+                      <li className="main_nav_item active">
+                        <a href="/starttrip">Home</a>
+                      </li>
+                      <li className="main_nav_item">
+                        <a href="profile">Dashboard</a>
+                      </li>
+                      <li className="main_nav_item">
+                        <a href="accomodations">Accomodations</a>
+                      </li>
+                      <li className="main_nav_item">
+                        <a href="contactus">Contact</a>
+                      </li>
+                      <li className="main_nav_item">
+                        <a href="aboutus">About us</a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  {/* <!-- Hamburger --> */}
+                  <div className="hamburger ml-auto">
+                    <i className="fa fa-bars" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </header>
 
-          {/* <!-- Main Navigation --> */}
-          <nav className="main_nav ml-auto">
-            <ul className="main_nav_list">
-              <li className="main_nav_item active"><a href="/starttrip">Home</a></li>
-              <li className="main_nav_item"><a href="accomodations">Accomodations</a></li>
-              <li className="main_nav_item"><a href="contactus">Contact</a></li>
-              <li className="main_nav_item"><a href="aboutus">About us</a></li>
-            </ul>
-          </nav>
+        {/* <!-- Menu --> */}
 
-        
+        <div className="menu_container menu_mm">
+          {/* <!-- Menu Close Button --> */}
+          <div className="menu_close_container">
+            <div className="menu_close" />
+          </div>
 
-          {/* <!-- Hamburger --> */}
-          <div className="hamburger ml-auto"><i className="fa fa-bars" aria-hidden="true"></i></div>
+          {/* <!-- Menu Items --> */}
+          <div className="menu_inner menu_mm">
+            <div className="menu menu_mm">
+              <div className="menu_search_form_container">
+                <form action="#" id="menu_search_form">
+                  <input type="search" className="menu_search_input menu_mm" />
+                  <button
+                    id="menu_search_submit"
+                    className="menu_search_submit"
+                    type="submit"
+                  >
+                    <img src="images/search_2.png" alt="" />
+                  </button>
+                </form>
+              </div>
+              <ul className="menu_list menu_mm">
+                <li className="menu_item menu_mm">
+                  <a href="#">Home</a>
+                </li>
+                <li className="menu_item menu_mm">
+                  <a href="accomodations">Accomodations</a>
+                </li>
+                <li className="menu_item menu_mm">
+                  <a href="contactus">Contact</a>
+                </li>
+                <li className="menu_item menu_mm">
+                  <a href="aboutus">About us</a>
+                </li>
+              </ul>
 
+              <div className="menu_copyright menu_mm">
+                Colorlib All rights reserved
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-{/* <!-- Menu --> */}
-
-<div className="menu_container menu_mm">
-
-  {/* <!-- Menu Close Button --> */}
-  <div className="menu_close_container">
-    <div className="menu_close"></div>
-  </div>
-
-  {/* <!-- Menu Items --> */}
-  <div className="menu_inner menu_mm">
-    <div className="menu menu_mm">
-      <div className="menu_search_form_container">
-        <form action="#" id="menu_search_form">
-          <input type="search" className="menu_search_input menu_mm"/>
-          <button id="menu_search_submit" className="menu_search_submit" type="submit"><img src="images/search_2.png" alt=""/></button>
-        </form>
-      </div>
-      <ul className="menu_list menu_mm">
-        <li className="menu_item menu_mm"><a href="#">Home</a></li>
-        <li className="menu_item menu_mm"><a href="accomodations">Accomodations</a></li>
-        <li className="menu_item menu_mm"><a href="contactus">Contact</a></li>
-        <li className="menu_item menu_mm"><a href="aboutus">About us</a></li>
-
-      </ul>
-
-    
-
-      <div className="menu_copyright menu_mm">Colorlib All rights reserved</div>
-    </div>
-
-  </div>
-
-</div>
-</div>
     );
   }
 }
