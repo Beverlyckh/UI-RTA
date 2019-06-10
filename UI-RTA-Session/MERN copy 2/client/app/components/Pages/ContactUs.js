@@ -26,21 +26,15 @@ class ContactUs extends Component{
                                     {/* <!-- Main Navigation --> */}
                                     <nav class="main_nav ml-auto">
                                         <ul class="main_nav_list">
-                                        <li class="main_nav_item"><a href="login">Home</a></li>
-
-                                             <li className="main_nav_item"><a href="signup">About us</a></li>
+                                        <li class="main_nav_item"><a href="/starttrip">Home</a></li>
 								            <li class="main_nav_item"><a href="accomodations">Accomodations</a></li>
                                             <li class="main_nav_item active"><a href="contactus">Contact</a></li>
+											<li className="main_nav_item"><a href="aboutus">About us</a></li>
+
                                         </ul>
                                     </nav>
             
-                                    {/* <!-- Search --> */}
-                                    <div class="search">
-                                        <form action="#" class="search_form">
-                                            <input type="search" name="search_input" class="search_input ctrl_class" required="required" placeholder="Keyword"/>
-                                            <button type="submit" class="search_button ml-auto ctrl_class"><img src="images/search.png" alt=""/></button>
-                                        </form>
-                                    </div>
+                                  
             
                                     {/* <!-- Hamburger --> */}
                                     <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
@@ -71,23 +65,14 @@ class ContactUs extends Component{
                 </form>
             </div>
             <ul class="menu_list menu_mm">
-                <li class="menu_item menu_mm"><a href="login">Home</a></li>
-                <li class="menu_item menu_mm"><a href="aboutus">About us</a></li>
+                <li class="menu_item menu_mm"><a href="/starttrip">Home</a></li>
                 <li class="menu_item menu_mm"><a href="accomodations">Accomodations</a></li>
                 <li class="menu_item menu_mm"><a href="#">Contact</a></li>
+				<li class="menu_item menu_mm"><a href="aboutus">About us</a></li>
+
             </ul>
 
-            {/* <!-- Menu Social --> */}
-            
-            <div class="menu_social_container menu_mm">
-                <ul class="menu_social menu_mm">
-                    <li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                    <li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
+          
 
             <div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
         </div>
@@ -133,7 +118,7 @@ class ContactUs extends Component{
 			<div class="row contact_content">
 				<div class="col-lg-5">
 					<div class="contact_text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</p>
+									
 					</div>
 					<div class="contact_info">
 						<div class="contact_info_box">i</div>
@@ -145,14 +130,7 @@ class ContactUs extends Component{
 									<li>Email: excursion@gmail.com</li>
 								</ul>
 							</div>
-							<div class="contact_info_social">
-								<ul>
-									<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -207,51 +185,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					</div>
 				</div>
 
-				{/* <!-- Footer Column --> */}
-				<div class="col-lg-4 footer_col">
-					<div class="footer_latest">
-						<div class="footer_title">Latest News</div>
-						<div class="footer_latest_content">
+			
 
-							{/* <!-- Footer Latest Post --> */}
-							<div class="footer_latest_item">
-								<div class="footer_latest_image"><img src="images/latest_1.jpg" alt="https://unsplash.com/@peecho"/></div>
-								<div class="footer_latest_item_content">
-									<div class="footer_latest_item_title"><a href="news.html">Brazil Summer</a></div>
-									<div class="footer_latest_item_date">Jan 09, 2018</div>
-								</div>
-							</div>
-
-							{/* <!-- Footer Latest Post --> */}
-							<div class="footer_latest_item">
-								<div class="footer_latest_image"><img src="images/latest_2.jpg" alt="https://unsplash.com/@sanfrancisco"/></div>
-								<div class="footer_latest_item_content">
-									<div class="footer_latest_item_title"><a href="news.html">A perfect vacation</a></div>
-									<div class="footer_latest_item_date">Jan 09, 2018</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				{/* <!-- Footer Column --> */}
-				<div class="col-lg-4 footer_col">
-					<div class="tags footer_tags">
-						<div class="footer_title">Tags</div>
-						<ul class="tags_content d-flex flex-row flex-wrap align-items-start justify-content-start">
-							<li class="tag"><a href="#">travel</a></li>
-							<li class="tag"><a href="#">summer</a></li>
-							<li class="tag"><a href="#">cruise</a></li>
-							<li class="tag"><a href="#">beach</a></li>
-							<li class="tag"><a href="#">offer</a></li>
-							<li class="tag"><a href="#">vacation</a></li>
-							<li class="tag"><a href="#">trip</a></li>
-							<li class="tag"><a href="#">city break</a></li>
-							<li class="tag"><a href="#">adventure</a></li>
-						</ul>
-					</div>
-				</div>
+				
 
 			</div>
 		</div>

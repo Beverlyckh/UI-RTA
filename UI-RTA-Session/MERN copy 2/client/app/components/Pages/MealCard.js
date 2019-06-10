@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Filter from "./filter.js";
 import StarRating from "./starRatings.js";
 import RangeSlider from "./rangeSlider.js";
+// import WeekContainer from "../Functionality/WeekContainer";
+
 
 class Square extends React.Component {
   render() {
@@ -78,7 +80,8 @@ class Content extends React.Component {
     var contentStyle = {
       margin: 30,
       marginLeft: 30,
-      height: 400
+      height: 400,
+      
     };
 
     const dinning_options = [
@@ -92,11 +95,11 @@ class Content extends React.Component {
       { value: "8", label: "supermarket" }
     ];
     const money_label = { 0: "$", 2: "$$", 4: "$$$" };
-    const distance_label = { 0: "Near", 50: "Far", 100: "Furthest" };
-
+    const distance_label = { 0: "Near", 100: "Far" };
+    // style={contentStyle}
     return (
-      <div style={contentStyle}>
-        <div className="filter">
+      <div className="ml-4 mt-4">
+        {/* <div className="filter"> */}
           <Filter
             name="meal_type"
             placeholder="Meal Type"
@@ -113,9 +116,10 @@ class Content extends React.Component {
               )
             })
           } */}
-        </div>
+        {/* </div> */}
         <br />
-        <div className="money">
+        {/* className="money" */}
+        <div >
           <p>Price range: {this.state.price_range}</p>
           <RangeSlider
             name="money_range"
@@ -124,8 +128,8 @@ class Content extends React.Component {
             max={4}
           />
         </div>
-
-        <div className="distance">
+        {/* className="distance" */}
+        <div >
           <p>Distance to travel from Location: {this.state.distance} miles</p>
           <RangeSlider
             name="distance_range"
@@ -140,6 +144,12 @@ class Content extends React.Component {
           <StarRating action={this.ratings_Handler} name="rate" />
         </div>
 
+        <div className="weatherForecast">
+          
+          {/* <WeekContainer origin={this.props.location}/> */}
+     
+          </div>   
+
         <div className="map">
           {/* <MF search={this.state.selected} price={this.state.price_range} 
           reviews={this.state.ratings} radius={this.state.distance}
@@ -153,17 +163,20 @@ class Content extends React.Component {
 class Card extends React.Component {
   render() {
     var cardStyle = {
-      height: "relative",
-      width: 390,
+      // height: "relative",
+      // maxWidth: 390,
+      // width: 390,
       padding: 0,
       backgroundColor: "rgba(225, 225, 225, 0.43)",
-      WebkitFilter: "drop-shadow(0px 0px 5px #666)",
-      filter: "drop-shadow(0px 0px 5px #666)",
-      margin: -3,
-      marginLeft: -59
+      // WebkitFilter: "drop-shadow(0px 0px 5px #666)",
+      // filter: "drop-shadow(0px 0px 5px #666)",
+      // margin: -3,
+      // marginLeft: -59
+      height:"400px",
+      width:"100%"
     };
     return (
-      <div style={cardStyle}>
+      <div className="card div" style={cardStyle}>
         <Square color={this.props.color} />
         <Content {...this.props} />
       </div>

@@ -5,6 +5,8 @@ import Header from "../Header/Header";
 import MealMap from "./MealMap.js";
 import MealCard from "./MealCard.js";
 import Route from "./Route";
+import { Container } from "reactstrap";
+// import WeekContainer from "../Functionality/WeekContainer";
 
 class MealPreferences extends React.Component {
   constructor(props) {
@@ -61,12 +63,6 @@ class MealPreferences extends React.Component {
       //no token, not logged in
       this.setState({ isLoading: false });
     }
-
-    if (this.props.location.state.waypoints) {
-      this.setState({
-        route: this.props.location.state.waypoints
-      });
-    }
   }
 
   onEnterTrip() {
@@ -79,7 +75,7 @@ class MealPreferences extends React.Component {
 
     //add them to array
     let waypoints = this.state.route;
-
+    console.log("LES WP ",waypoints)
     //from storage get the token
     const obj = getFromStorage("the_main_app");
 
@@ -122,6 +118,7 @@ class MealPreferences extends React.Component {
   }
 
   onMouseClickAdd(lat, lng, name) {
+    console.log("WE JUST CLICKED ",name)
     this.addToDB = true;
     var newRoute = this.state.route;
     newRoute.push({ waypointName: name, lat: lat, lng: lng });
@@ -174,101 +171,115 @@ class MealPreferences extends React.Component {
   }
 
   render() {
-  
     var buttonStyle = { position: "fixed", top: 600, left: 200 };
     var mealCard = {
       alignItems: "center",
       justifyContent: "center",
       display: "flex",
       flexDirection: "row",
-      position: "relative"
+      position: "relative",
+      width: "100%"
     };
 
+    
+
     return (
-      <div className="container flex">
 
-	{/* <!-- Header --> */}
-
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_container d-flex flex-row align-items-center justify-content-start">
-
-						{/* <!-- Logo --> */}
-						<div class="logo_container">
-							<div class="logo">
-								<div>Excursion</div>
-								<div>Road Trip Planner</div>
-								<div class="logo_image"><img src="images/logo.png" alt=""/></div>
-							</div>
-						</div>
-
-						{/* <!-- Main Navigation --> */}
-						<nav class="main_nav ml-auto">
-							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="login">Home</a></li>
-								<li class="main_nav_item active"><a href="signup">About us</a></li>
-								<li class="main_nav_item"><a href="accomodations">Accomodations</a></li>
-								<li class="main_nav_item"><a href="contactUs">Contact</a></li>
-							</ul>
-						</nav>
-
-						{/* <!-- Search --> */}
-						<div class="search">
-							<form action="#" class="search_form">
-								<input type="search" name="search_input" class="search_input ctrl_class" required="required" placeholder="Keyword"/>
-								<button type="submit" class="search_button ml-auto ctrl_class"><img src="images/search.png" alt=""/></button>
-							</form>
-						</div>
-
-						{/* <!-- Hamburger --> */}
-						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-
-        {/* <Header /> */}
-
-        <p />
-<div className="nothing" style={{marginTop:"100px"}}>
-        <MealCard
-          style={mealCard}
+      <div className="row p-4">
+          <div className="col-md-4">
+          <div className="row">
+          <MealCard
+          // style={mealCard}
           color="#ffc107"
           getKeywordList={this.selectedKeywords}
           getPrice={this.selectPrice}
           getRadius={this.selectedDistance}
           getRatings={this.selectedRatings}
+          locations={this.props.location.state}
         />
-        <MealMap
+          </div>
+         <div className="row">
+         <Route
+          waypoints={this.state.route}
+          from={this.props.location.state.from}
+          to={this.props.location.state.to}
+          handleClick={this.removeWaypoint}
+        />
+            <div style={{backgroundColor: "rgba(225, 225, 225, 0.43)", paddingLeft:"3px"}}> 
+            <button
+              type="button"
+              class="btn btn-warning"
+              disabled={false}
+              onClick={this.onEnterTrip}
+            >
+              Save Trip Changes
+            </button> 
+            </div>
+       
+         </div>
+          </div>
+          <div className="col-md-8 p-1">
+          <MealMap
           search={this.state.selected}
           price={this.state.price_range}
           reviews={this.state.ratings}
           radius={this.state.distance}
           locations={this.props.location.state}
           handleClick={this.onMouseClickAdd}
-          route={this.state.route}
         />
-        <Route
-          waypoints={this.state.route}
-          from={this.props.location.state.from}
-          to={this.props.location.state.to}
-          handleClick={this.removeWaypoint}
-        />
-        <button
-          type="button"
-          style={buttonStyle}
-          class="btn btn-warning pl-5 pr-5"
-          disabled={!this.addToDB}
-          onClick={this.onEnterTrip}
-        >
-          Save Trip Changes
-        </button>
+         
+          </div>
       </div>
-      </div>
+      
+//       // container Meal pref div
+//       <div className="">
+//         {/* <Header /> */}
+//         <p />
+//         {/* <WeekContainer origin={this.props.location.state.from}/> */}
+//         <div style={{width:"500px", marginLeft:"10px"}}>
+//         <MealCard
+//           // style={mealCard}
+//           color="#ffc107"
+//           getKeywordList={this.selectedKeywords}
+//           getPrice={this.selectPrice}
+//           getRadius={this.selectedDistance}
+//           getRatings={this.selectedRatings}
+//           locations={this.props.location.state}
+//         />
+//          <Route
+//           waypoints={this.state.route}
+//           from={this.props.location.state.from}
+//           to={this.props.location.state.to}
+//           handleClick={this.removeWaypoint}
+//         />
+// </div>
+// {/* <div>
+//          <MealMap
+//           search={this.state.selected}
+//           price={this.state.price_range}
+//           reviews={this.state.ratings}
+//           radius={this.state.distance}
+//           locations={this.props.location.state}
+//           handleClick={this.onMouseClickAdd}
+//         />
+//   </div>
+//         <Route
+//           waypoints={this.state.route}
+//           from={this.props.location.state.from}
+//           to={this.props.location.state.to}
+//           handleClick={this.removeWaypoint}
+//         />
+        // <button
+        //   type="button"
+        //   style={buttonStyle} 
+        //   class="btn btn-warning pl-5 pr-5"
+        //   disabled={!this.addToDB}
+        //   onClick={this.onEnterTrip}
+        // >
+        //   Save Trip Changes
+        // </button> */}
+      
+//       </div>
     );
   }
 }

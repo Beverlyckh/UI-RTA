@@ -16,8 +16,50 @@ class SignupForm extends Component{
         firstName: "",
         lastName: "",
         redirect: false
-      }
-    }
+			};
+			this.onSignUp = this.onSignUp.bind(this);
+		}
+		onSignUp(userData){
+			//grab state
+			//post request to backend
+			const { signUpEmail, signUpPassword, firstName, lastName } = userData;
+			this.setState({ isLoading: true });
+	
+			//post request to backend , creates API request to out end point
+			fetch("/api/account/signup", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({
+					email: signUpEmail,
+					password: signUpPassword,
+					firstName: firstName,
+					lastName: lastName
+				})
+			})
+				.then(res => res.json())
+				.then(json => {
+					if (json.success) {
+						console.log("IMI")
+						this.setState({
+							signUpError: json.message,
+							isLoading: false,
+							signUpEmail: "",
+							signUpPassword: "",
+							firstName: "",
+							lastName: "",
+							redirect: true
+						});
+					} else {
+						console.log("AMA")
+						this.setState({
+							signUpError: json.message,
+							isLoading: false
+						});
+					}
+				});
+		}
 render(){
     var positionStyle = {
         display: "flex",

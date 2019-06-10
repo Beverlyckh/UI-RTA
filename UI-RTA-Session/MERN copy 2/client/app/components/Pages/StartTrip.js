@@ -93,7 +93,7 @@ class StartTrip extends Component {
         <Header />
         <div className="text-center" style={{height: "100vh"}}>
           <div className="landingpage-style">
-            <p className="roadTripAdvisor">
+            <p style={{ color:"#F8F8F8",opacity:0.01}} className="roadTripAdvisor">
              
               Share Road Trip Advisor with your friends!
             </p>
@@ -105,7 +105,7 @@ class StartTrip extends Component {
                 <div class="card ">
                   <div class="card-body" style={{backgroundImage:"url(images/find.jpg)", backgroundPosition:"center", backgroundSize:"cover"} }>
                     <div class="row">
-                      <div class="col-md-3">
+                      <div class="col-md-4">
                         <div class="form-group ">
                           {/* <input type="Location" onChange={(event) => this.handleLocations(event)} class="form-control" id="from" placeholder="Starting From" /> */}
                           <LocationSearchInput
@@ -116,7 +116,7 @@ class StartTrip extends Component {
                         </div>
                       </div>
 
-                      <div class="col-md-3">
+                      <div class="col-md-4">
                         <div class="form-group ">
                           {/*<input type="Destination" onChange={(event) => this.handleLocations(event)} class="form-control" id="to" placeholder="Destination" /> */}
                           <LocationSearchInput
@@ -127,33 +127,9 @@ class StartTrip extends Component {
                         </div>
                       </div>
 
-                      {/* <div class="col-md-3 ">
-                        <div class="form-group ">
-                          <DateRangePicker
-                            onApply={this.handleApply}
-                            isInvalidDate={this.checkInvalidDates}
-                            opens="left"
-                            containerStyles={{ display: "block" }}
-                          >
-                            <input
-                              ref={this.dateRef}
-                              id="dates"
-                              type="text"
-                              className="form-control"
-                            />
-                          </DateRangePicker>
-                        </div>
-                      </div> */}
+                    
 
-                      <div class="col-md-3 ">
-                        <div class="form-group ">
-                          <input
-                            type="time"
-                            placeholder="Return"
-                            className="form-control"
-                          />
-                        </div>
-                      </div>
+                      
                     </div>
                     <div class="row">
                       <div class="col-md-9">
@@ -163,10 +139,12 @@ class StartTrip extends Component {
                       <div class="col-md-3">
                         {this.renderRedirect()}
                         <button
+                         class="btn pl-5 pr-5"
+                  style={{backgroundColor:"#fe3c52", color:"white"}}
                           onClick={this.handleLocationSubmit}
                           disabled={!isEnabled}
                           type="button"
-                          class="btn btn-warning  pl-5 pr-5"
+                        
                         >
                           {" "}
                           Search{" "}
@@ -179,6 +157,40 @@ class StartTrip extends Component {
             </div>
           </div>
         </div>
+         {/* <!-- Footer --> */}
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+				{/* <!-- Footer Column --> */}
+				<div class="col-lg-4 footer_col">
+					<div class="footer_about">
+						{/* <!-- Logo --> */}
+						<div class="logo_container">
+							<div class="logo">
+								<div>Excursion</div>
+								<div>Road Trip Planner</div>
+								<div class="logo_image"><img src="images/logo.png" alt=""/></div>
+							</div>
+						</div>
+						<div class="footer_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar sed mauris eget tincidunt. Sed lectus nulla, tempor vel eleifend quis, tempus rut rum metus. Pellentesque ultricies enim eu quam fermentum hendrerit.</div>
+						<div class="copyright">
+                        {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+{/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
+</div>
+					</div>
+				</div>
+
+			
+
+				
+
+			</div>
+		</div>
+	</footer>
+
       </div>
     );
   }

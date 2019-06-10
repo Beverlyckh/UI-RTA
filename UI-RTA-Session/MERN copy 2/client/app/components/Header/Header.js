@@ -102,21 +102,14 @@ class Header extends Component {
           {/* <!-- Main Navigation --> */}
           <nav className="main_nav ml-auto">
             <ul className="main_nav_list">
-              <li className="main_nav_item active"><a href="Login">Home</a></li>
-              <li className="main_nav_item"><a href="signup">About us</a></li>
-              {/* <li className="main_nav_item"><a href="offers.html">Trip Guides</a></li> */}
+              <li className="main_nav_item active"><a href="/starttrip">Home</a></li>
               <li className="main_nav_item"><a href="accomodations">Accomodations</a></li>
               <li className="main_nav_item"><a href="contactus">Contact</a></li>
+              <li className="main_nav_item"><a href="aboutus">About us</a></li>
             </ul>
           </nav>
 
-          {/* <!-- Search --> */}
-          <div className="search">
-            <form action="#" className="search_form">
-              <input type="search" name="search_input" className="search_input ctrl_class" required="required" placeholder="Keyword"/>
-              <button type="submit" className="search_button ml-auto ctrl_class"><img src="images/search.png" alt=""/></button>
-            </form>
-          </div>
+        
 
           {/* <!-- Hamburger --> */}
           <div className="hamburger ml-auto"><i className="fa fa-bars" aria-hidden="true"></i></div>
@@ -147,22 +140,13 @@ class Header extends Component {
       </div>
       <ul className="menu_list menu_mm">
         <li className="menu_item menu_mm"><a href="#">Home</a></li>
-        <li className="menu_item menu_mm"><a href="signup">About us</a></li>
         <li className="menu_item menu_mm"><a href="accomodations">Accomodations</a></li>
         <li className="menu_item menu_mm"><a href="contactus">Contact</a></li>
+        <li className="menu_item menu_mm"><a href="aboutus">About us</a></li>
+
       </ul>
 
-      {/* <!-- Menu Social --> */}
-      
-      <div className="menu_social_container menu_mm">
-        <ul className="menu_social menu_mm">
-          <li className="menu_social_item menu_mm"><a href="#"><i className="fa fa-pinterest" aria-hidden="true"></i></a></li>
-          <li className="menu_social_item menu_mm"><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          <li className="menu_social_item menu_mm"><a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
-          <li className="menu_social_item menu_mm"><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-          <li className="menu_social_item menu_mm"><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
+    
 
       <div className="menu_copyright menu_mm">Colorlib All rights reserved</div>
     </div>
