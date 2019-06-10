@@ -10,7 +10,9 @@ class Waypoint extends Component {
       fontSize: 15,
       backgroundColor: this.props.color,
       textAlign: "left",
-      display: "inline-block"
+      display: "inline-block",
+      color: "white"
+    
     };
 
     let status = this.props.showButton;
@@ -19,7 +21,7 @@ class Waypoint extends Component {
       <div>
         {status ? (
           <div>
-            <p style={waypointStyle}>
+            <p className="mealTagColor" style={waypointStyle}>
               {this.props.waypoint}{" "}
               {
                 <button

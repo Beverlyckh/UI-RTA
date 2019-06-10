@@ -15,7 +15,8 @@ class Square extends React.Component {
       fontFamily: "sans-serif",
       fontWeight: "bold",
       padding: 13,
-      margin: 10
+      margin: 10,
+      color: "white"
     };
 
     return (
@@ -177,7 +178,7 @@ class Card extends React.Component {
     };
     return (
       <div className="card div" style={cardStyle}>
-        <Square color={this.props.color} />
+        <Square color="#fe3c52" />
         <Content {...this.props} />
       </div>
       // passing the list of props from App into content via <Content {...this.props}/>

@@ -38,15 +38,16 @@ const MyMapComponent = compose(
     mapElement: (
       <div
         style={{
+        //  padding-top:"150px",
           position: "relative",
           // width: 420,
           // height: 350,
           //WebkitFilter: "drop-shadow(0px 0px 30px )",
           // marginLeft: 500,
-          // marginTop: -510
+           marginTop: "150px",
           right:0,
-          width:"100%",
-          height:"100%"
+          width:"70%",
+          height:"70%"
         }}
       />
     )

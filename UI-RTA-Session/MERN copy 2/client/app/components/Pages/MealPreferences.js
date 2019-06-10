@@ -185,9 +185,54 @@ class MealPreferences extends React.Component {
 
     return (
 
-      <div className="row p-4">
-          <div className="col-md-4">
-          <div className="row">
+      <div className="row p-4" style={{ "backgroundImage": "url(images/home.jpg)" }}>
+         {/* <!-- Header --> */}
+
+         <header class="header">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="header_container d-flex flex-row align-items-center justify-content-start">
+                  {/* <!-- Logo --> */}
+                  <div class="logo_container">
+                    <div class="logo">
+                      <div>Excursion</div>
+                      <div>Road Trip Planner</div>
+                      <div class="logo_image">
+                        <img src="images/logo.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* <!-- Main Navigation --> */}
+                  <nav class="main_nav ml-auto">
+                    <ul class="main_nav_list">
+                      <li class="main_nav_item">
+                        <a href="/starttrip">Home</a>
+                      </li>
+                      <li class="main_nav_item">
+                        <a href="accomodations">Accomodations</a>
+                      </li>
+                      <li class="main_nav_item ">
+                        <a href="contactus">Contact</a>
+                      </li>
+                      <li className="main_nav_item active">
+                        <a href="#">About us</a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  {/* <!-- Hamburger --> */}
+                  <div class="hamburger ml-auto">
+                    <i class="fa fa-bars" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+          <div className="col-md-4 " style={{paddingTop:"150px", alignItems:"center"}}>
+          <div className="row" >
           <MealCard
           // style={mealCard}
           color="#ffc107"
@@ -209,8 +254,10 @@ class MealPreferences extends React.Component {
             <button
               type="button"
               class="btn btn-warning"
+              style={{backgroundColor:"#fe3c52", color:"white"}}
               disabled={false}
               onClick={this.onEnterTrip}
+             
             >
               Save Trip Changes
             </button> 
@@ -218,7 +265,7 @@ class MealPreferences extends React.Component {
        
          </div>
           </div>
-          <div className="col-md-8 p-1">
+          <div className="col-md-8 p-1" >
           <MealMap
           search={this.state.selected}
           price={this.state.price_range}
