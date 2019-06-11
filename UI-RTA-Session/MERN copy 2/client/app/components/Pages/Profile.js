@@ -107,7 +107,7 @@ class Profile extends Component {
       justifyContent: "center"
     };
     var mainDiv = {
-      marginTop: 150,
+      paddingTop: 200,
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -117,19 +117,20 @@ class Profile extends Component {
       opacity: 0.6
     };
     return (
-      <div class="here otherBack">
-        <div className="text-center">
+      <div class="here otherBack" style={{ "backgroundImage": "url(images/home.jpg)", height:"100vh" }}>
+        <div className="text-center" >
           <Header />
           <div style={mainDiv} className="landingpage-style">
             <h1 className="roadTripAdvisor">Welcome to Your Profile</h1>
-            <p className="roadTripAdvisor"> What Would You Like to do Today?</p>
+            <p className="roadTripAdvisor" style={{color:"white"}}> What Would You Like to do Today?</p>
           </div>
         </div>
         <div class="row text-center pb-1" style={positionStyle}>
           {" "}
           <button
-            class="btn btn-warning pl-5 pr-5"
+            class="btn  pl-5 pr-5"
             block
+            style={{backgroundColor:"#fe3c52", color:"white"}}
             type="button"
             onClick={this.handleCreateNewTrip}
           >
@@ -140,6 +141,7 @@ class Profile extends Component {
         <p />
         <div style={positionStyle} class="text-center">
           <ButtonDropdown
+            style={{backgroundColor:"#fe3c52", color:"white"}}
             direction="right"
             isOpen={this.state.btnDropright}
             toggle={value => {
@@ -168,7 +170,8 @@ class Profile extends Component {
               }
             }}
           >
-            <DropdownToggle caret color="warning">
+            <DropdownToggle              style={{backgroundColor:"#fe3c52", color:"white"}}
+caret color="">
               Open Existing Trip
             </DropdownToggle>
             <DropdownMenu style={dropDownItemStyle}>
