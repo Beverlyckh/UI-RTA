@@ -47,7 +47,7 @@ const MyMapComponent = compose(
           marginTop: "150px",
           right: 0,
           width: "99.5%",
-          height: "70%"
+          height: "80%"
         }}
       />
     )

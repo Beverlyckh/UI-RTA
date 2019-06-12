@@ -107,7 +107,7 @@ class Header extends Component {
                         <a href="/starttrip">Home</a>
                       </li>
                       <li className="main_nav_item">
-                        <a href="profile">Dashboard</a>
+                        <a href="profile">Profile</a>
                       </li>
                       <li className="main_nav_item">
                         <a href="accomodations">Accomodations</a>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Filter from "./filter.js";
 import StarRating from "./starRatings.js";
 import RangeSlider from "./rangeSlider.js";
-// import WeekContainer from "../Functionality/WeekContainer";
+import WeekContainer from "../Functionality/WeekContainer";
 
 
 class Square extends React.Component {
@@ -101,6 +101,11 @@ class Content extends React.Component {
     return (
       <div className="ml-4 mt-4">
         {/* <div className="filter"> */}
+        <div className="weatherForecast" >
+
+<WeekContainer origin={this.props.location}/>
+
+</div>  
           <Filter
             name="meal_type"
             placeholder="Meal Type"
@@ -121,7 +126,7 @@ class Content extends React.Component {
         <br />
         {/* className="money" */}
         <div >
-          <p>Price range: {this.state.price_range}</p>
+          <p style={{color:"white"}} >Price range: {this.state.price_range}</p>
           <RangeSlider
             name="money_range"
             action={this.price_Handler}
@@ -131,7 +136,7 @@ class Content extends React.Component {
         </div>
         {/* className="distance" */}
         <div >
-          <p>Distance to travel from Location: {this.state.distance} miles</p>
+          <p style={{color:"white"}} >Distance to travel from Location: {this.state.distance} miles</p>
           <RangeSlider
             name="distance_range"
             action={this.distance_Handler}
@@ -141,7 +146,7 @@ class Content extends React.Component {
         </div>
 
         <div className="ratings">
-          <p>Reviews: {this.state.ratings}</p>
+          <p style={{color:"white"}}>Reviews: {this.state.ratings}</p>
           <StarRating action={this.ratings_Handler} name="rate" />
         </div>
 
@@ -151,11 +156,7 @@ class Content extends React.Component {
      
           </div>   
 
-        <div className="map">
-          {/* <MF search={this.state.selected} price={this.state.price_range} 
-          reviews={this.state.ratings} radius={this.state.distance}
-        /> */}
-        </div>
+ 
       </div>
     );
   }
@@ -164,16 +165,9 @@ class Content extends React.Component {
 class Card extends React.Component {
   render() {
     var cardStyle = {
-      // height: "relative",
-      // maxWidth: 390,
-      // width: 390,
       padding: 0,
       backgroundColor: "rgba(225, 225, 225, 0.43)",
-      // WebkitFilter: "drop-shadow(0px 0px 5px #666)",
-      // filter: "drop-shadow(0px 0px 5px #666)",
-      // margin: -3,
-      // marginLeft: -59
-      height:"400px",
+      height:"540px",
       width:"100%"
     };
     return (

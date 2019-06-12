@@ -30,7 +30,7 @@ class Accomodations extends Component {
                         <a href="/starttrip">Home</a>
                       </li>
                       <li className="main_nav_item">
-                        <a href="profile">Dashboard</a>
+                        <a href="profile">Profile</a>
                       </li>
                       <li class="main_nav_item active">
                         <a href="#">Accomodations</a>

@@ -107,7 +107,7 @@ class Profile extends Component {
       justifyContent: "center"
     };
     var mainDiv = {
-      paddingTop: 200,
+      paddingTop: 150,
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -117,20 +117,71 @@ class Profile extends Component {
       opacity: 0.6
     };
     return (
-      <div class="here otherBack" style={{ "backgroundImage": "url(images/home.jpg)", height:"100vh" }}>
-        <div className="text-center" >
-          <Header />
-          <div style={mainDiv} className="landingpage-style">
-            <h1 className="roadTripAdvisor">Welcome to Your Profile</h1>
-            <p className="roadTripAdvisor" style={{color:"white"}}> What Would You Like to do Today?</p>
+      <div class="here otherBack" style={{ "backgroundImage": "url(images/home.jpg)", height: "100vh"
+    }}>
+    
+        
+          {/* <!-- Header --> */}
+
+          <header class="header">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="header_container d-flex flex-row align-items-center justify-content-start">
+                  {/* <!-- Logo --> */}
+                  <div class="logo_container">
+                    <div class="logo">
+                      <div>Excursion</div>
+                      <div>Road Trip Planner</div>
+                      <div class="logo_image">
+                        <img src="images/logo.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* <!-- Main Navigation --> */}
+                  <nav class="main_nav ml-auto">
+                    <ul class="main_nav_list">
+                      <li class="main_nav_item">
+                        <a href="/starttrip">Home</a>
+                      </li>
+                      <li className="main_nav_item active">
+                        <a href="#">Profile</a>
+                      </li>
+                      <li class="main_nav_item">
+                        <a href="accomodations">Accomodations</a>
+                      </li>
+                      <li class="main_nav_item ">
+                        <a href="contactus">Contact</a>
+                      </li>
+                      <li className="main_nav_item">
+                        <a href="aboutus">About us</a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  {/* <!-- Hamburger --> */}
+                  <div class="hamburger ml-auto">
+                    <i class="fa fa-bars" aria-hidden="true" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </header>
+
+
+          <div style={mainDiv} className="landingpage-style" >
+            <h1 className="roadTripAdvisor py-5" style={{color:"white"}} >Welcome to Your Profile</h1>
+            <p className="roadTripAdvisor" style={{color:"white"}}> What Would You Like to do Today?</p>
+          
         </div>
         <div class="row text-center pb-1" style={positionStyle}>
           {" "}
           <button
-            class="btn  pl-5 pr-5"
+                         class="btn pl-5 pr-5"
+                  style={{backgroundColor:"#fe3c52", color:"white"}}
             block
-            style={{backgroundColor:"#fe3c52", color:"white"}}
             type="button"
             onClick={this.handleCreateNewTrip}
           >
@@ -141,7 +192,6 @@ class Profile extends Component {
         <p />
         <div style={positionStyle} class="text-center">
           <ButtonDropdown
-            style={{backgroundColor:"#fe3c52", color:"white"}}
             direction="right"
             isOpen={this.state.btnDropright}
             toggle={value => {
@@ -170,8 +220,7 @@ class Profile extends Component {
               }
             }}
           >
-            <DropdownToggle              style={{backgroundColor:"#fe3c52", color:"white"}}
-caret color="">
+            <DropdownToggle caret style={{backgroundColor:"#fe3c52", color:"white"}}>
               Open Existing Trip
             </DropdownToggle>
             <DropdownMenu style={dropDownItemStyle}>

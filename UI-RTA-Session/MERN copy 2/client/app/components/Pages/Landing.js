@@ -53,7 +53,7 @@ class Login extends Component {
 
   loginRedirect() {
     if (this.state.loginRedirect) {
-      return <Redirect to={{ pathname: "/a" }} />;
+      return <Redirect to={{ pathname: "/signin" }} />;
     }
   }
 

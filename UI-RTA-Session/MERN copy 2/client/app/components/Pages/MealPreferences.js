@@ -6,7 +6,7 @@ import MealMap from "./MealMap.js";
 import MealCard from "./MealCard.js";
 import Route from "./Route";
 import { Container } from "reactstrap";
-// import WeekContainer from "../Functionality/WeekContainer";
+
 
 class MealPreferences extends React.Component {
   constructor(props) {
@@ -210,6 +210,9 @@ class MealPreferences extends React.Component {
                       <li class="main_nav_item">
                         <a href="/starttrip">Home</a>
                       </li>
+                      <li className="main_nav_item">
+                        <a href="profile">Profile</a>
+                      </li>
                       <li class="main_nav_item">
                         <a href="accomodations">Accomodations</a>
                       </li>
@@ -244,6 +247,7 @@ class MealPreferences extends React.Component {
               getRadius={this.selectedDistance}
               getRatings={this.selectedRatings}
               locations={this.props.location.state}
+              location={this.props.location.state.from}
             />
           </div>
           <div className="row">
@@ -261,8 +265,9 @@ class MealPreferences extends React.Component {
             >
               <button
                 type="button"
-                class="btn btn-warning"
-                style={{ backgroundColor: "#fe3c52", color: "white" }}
+                class="btn pl-5 pr-5"
+                  style={{backgroundColor:"#fe3c52", color:"white"}}
+                
                 disabled={false}
                 onClick={this.onEnterTrip}
               >
@@ -284,55 +289,7 @@ class MealPreferences extends React.Component {
         </div>
       </div>
 
-      //       // container Meal pref div
-      //       <div className="">
-      //         {/* <Header /> */}
-      //         <p />
-      //         {/* <WeekContainer origin={this.props.location.state.from}/> */}
-      //         <div style={{width:"500px", marginLeft:"10px"}}>
-      //         <MealCard
-      //           // style={mealCard}
-      //           color="#ffc107"
-      //           getKeywordList={this.selectedKeywords}
-      //           getPrice={this.selectPrice}
-      //           getRadius={this.selectedDistance}
-      //           getRatings={this.selectedRatings}
-      //           locations={this.props.location.state}
-      //         />
-      //          <Route
-      //           waypoints={this.state.route}
-      //           from={this.props.location.state.from}
-      //           to={this.props.location.state.to}
-      //           handleClick={this.removeWaypoint}
-      //         />
-      // </div>
-      // {/* <div>
-      //          <MealMap
-      //           search={this.state.selected}
-      //           price={this.state.price_range}
-      //           reviews={this.state.ratings}
-      //           radius={this.state.distance}
-      //           locations={this.props.location.state}
-      //           handleClick={this.onMouseClickAdd}
-      //         />
-      //   </div>
-      //         <Route
-      //           waypoints={this.state.route}
-      //           from={this.props.location.state.from}
-      //           to={this.props.location.state.to}
-      //           handleClick={this.removeWaypoint}
-      //         />
-      // <button
-      //   type="button"
-      //   style={buttonStyle}
-      //   class="btn btn-warning pl-5 pr-5"
-      //   disabled={!this.addToDB}
-      //   onClick={this.onEnterTrip}
-      // >
-      //   Save Trip Changes
-      // </button> */}
-
-      //       </div>
+    
     );
   }
 }

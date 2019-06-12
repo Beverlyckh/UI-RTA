@@ -12,26 +12,12 @@ class Route extends Component {
     var from = this.props.from;
     var to = this.props.to;
 
-    // var routeStyle = {
-    //   overflow: "scroll",
-    //   backgroundColor: "rgba(225, 225, 225, 0.43)",
-    //   WebkitFilter: "drop-shadow(0px 0px 5px #666)",
-    //   filter: "drop-shadow(0px 0px 5px #666)",
-    //   width: 420,
-    //   height: 480,
-    //   marginLeft: 760,
-    //   marginTop: -777,
-    //   position: "relative"
-    // };
-
+    
 
     var routeStyle = {
       overflow: "scroll",
       backgroundColor: "rgba(225, 225, 225, 0.43)",
-      // WebkitFilter: "drop-shadow(0px 0px 5px #666)",
-      // filter: "drop-shadow(0px 0px 5px #666)",
       width: "100%",
-      // height: 480,
       marginLeft: 0,
       marginTop: 0,
       position: "relative",

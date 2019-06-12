@@ -25,7 +25,8 @@ class Waypoint extends Component {
               {this.props.waypoint}{" "}
               {
                 <button
-                  class="btn btn-warning pl-1 pr-1"
+                  class="btn pl-1 pr-1"
+                  style={{backgroundColor:"#fe3c52"}} 
                   onClick={() => this.props.handleClick(this.props.waypoint)}
                 >
                   <i class="fa fa-trash" />

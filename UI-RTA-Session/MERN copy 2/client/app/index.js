@@ -9,14 +9,14 @@ import NotFound from "./components/App/NotFound";
 
 import Landing from "./components/Pages/Landing";
 import Account from "./components/Pages/Account";
-// import SignUp from "./components/Pages/SignUp";
+
 import StartTrip from "./components/Pages/StartTrip";
 import MealPref from "./components/Pages/MealPreferences";
 import Profile from "./components/Pages/Profile";
 
-import A from "./components/Pages/a";
-import B from "./components/Pages/b";
-// import signInButton from "./components/Pages/signInButton";
+import SignIn from "./components/Pages/SignIn";
+import SignUp from "./components/Pages/SignUp";
+
 
 //import Merge from './components/Home/Merge';
 
@@ -31,8 +31,8 @@ render(
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/landing" component={Landing} />
-        <Route exact path="/a" component={A} />
-        <Route exact path="/b" component={B} />
+        <Route exact path="/SignIn" component={SignIn} />
+        <Route exact path="/SignUp" component={SignUp} />
         <Route exact path="/aboutus" component={AboutUs} />
 
         {/* <Route exact path="/Account" component={Account} /> */}
